@@ -31,13 +31,14 @@ Scaling transformation techniques:
 ### Model Tuning
 
 **Hyperparameter categories:**
-    1. Model Hyperparameters: Help define the model. Such as Filter size, pooling, stride, and padding.
-    2. Optimizer Hyperparameters: How the model learns patterns on data. Such as Gradient descent, and stochastic gradient descent.
-    3. Data Hyperprameters: Define attributes of the data itself. Useful for small/homogenous datasets.
+1. Model Hyperparameters: Help define the model. Such as Filter size, pooling, stride, and padding.
+2. Optimizer Hyperparameters: How the model learns patterns on data. Such as Gradient descent, and stochastic gradient descent.
+3. Data Hyperprameters: Define attributes of the data itself. Useful for small/homogenous datasets.
+
 **Methods for tuning hyperparameters:**
-    1. Grid search: you set up a grid made up of hyperparameters and their different values. For each possible combination, a model is trained and a score is produced on the validation data. With this approach, every single combination of the given possible hyperparameter values is tried. This approach, while thorough, can be very inefficient.
-    2. Random search: similar to grid search, but instead of training and scoring on each possible hyperparameter combination, random combinations are selected. You can set the number of search iterations based on time and resource constraints.
-    3. Bayesian search: Makes guesses about best hyperparameter combinations, then uses regressions to refine the combinations.
+1. Grid search: you set up a grid made up of hyperparameters and their different values. For each possible combination, a model is trained and a score is produced on the validation data. With this approach, every single combination of the given possible hyperparameter values is tried. This approach, while thorough, can be very inefficient.
+2. Random search: similar to grid search, but instead of training and scoring on each possible hyperparameter combination, random combinations are selected. You can set the number of search iterations based on time and resource constraints.
+3. Bayesian search: Makes guesses about best hyperparameter combinations, then uses regressions to refine the combinations.
 
 * Amazon SageMaker lets you perform automated hyperparameter tuning. Automatic model tuning can be used with the Amazon SageMaker built-in algorithms, pre-built deep learning frameworks, and bring-your-own-algorithm containers.
 
