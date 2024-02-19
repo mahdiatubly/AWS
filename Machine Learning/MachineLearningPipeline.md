@@ -27,3 +27,10 @@ Scaling transformation techniques:
            - Ordinal: For ordinal variables like this one, you can use a map function in Pandas to convert the text into numerical values.
            - Nominal: With one-hot encoding, you convert this one column of Home Types into three columns: A column for House, a column for Apartment, and a column for Condo. Pandas get_dummies function will automatically create the new columns based on one-hot encoding and create the column names for you, with the entry for each category at the end of the variable name.
 
+
+### Model Tuning
+
+**Hyperparameter categories:**
+    1.  model hyperparameters that help define the model itself.
+    
+
