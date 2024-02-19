@@ -33,7 +33,7 @@ Scaling transformation techniques:
 **Hyperparameter categories:**
 1. Model Hyperparameters: Help define the model. Such as Filter size, pooling, stride, and padding.
 2. Optimizer Hyperparameters: How the model learns patterns on data. Such as Gradient descent, and stochastic gradient descent.
-3. Data Hyperprameters: Define attributes of the data itself. Useful for small/homogenous datasets.
+3. Data Hyperprameters: Define attributes of the data itself. define data augmentation techniques like cropping or resizing for image-related problems. Useful for small/homogenous datasets.
 
 **Methods for tuning hyperparameters:**
 1. Grid search: you set up a grid made up of hyperparameters and their different values. For each possible combination, a model is trained and a score is produced on the validation data. With this approach, every single combination of the given possible hyperparameter values is tried. This approach, while thorough, can be very inefficient.
