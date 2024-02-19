@@ -10,5 +10,9 @@ processes:
       - With Structured data: Principal component analysis (PCA) or t-distributed stochastic neighbor embedding (T-SNE)
 
     - Feature selection:  Filtering the data is one of the common techniques that you will use for feature selection. Remember, machine learning algorithms are not only used for typical structured datasets. Oftentimes, we're dealing with images or audio, for instance. For those types of data formats, the data structure is more complicated and therefore often requires filtering to be more specific to our business problem.
-    - Feature creation and transformation
+    - Feature creation and transformation: is the process of generating new features from existing features.
+         - For numerical features: the techniques include:
+           - Taking the log, square root, or cube root of the feature.
+           - Binning is a great strategy that puts continuous data into groups, also called bins. This is one way to convert a continuous variable into a categorical variable. Binning has a smoothing effect on the input data and may also reduce the chances of overfitting in cases with small datasets.
+         - 
 
