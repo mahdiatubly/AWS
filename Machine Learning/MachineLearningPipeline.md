@@ -19,7 +19,11 @@ Scaling transformation techniques:
                 - Mean-variance standardization: For one particular feature X, we are going to first find out the mean and standard deviation for that particular feature in the training dataset. What we're going to do is remove the mean and divide by the standard deviation for each observation. After scaling, the new feature is going to have a mean of zero and a standard deviation of one. To achieve this transformation easily, we can call the scikit-learn StandardScaler function. By using the mean-variance standard deviation procedure, we still keep the outliers but reduce the impact of those outliers dramatically.
                 - MinMax scaling: we subtract the minimum value of the feature and divide it by the difference between the maximum of the feature and the minimum of the feature. After the transformation, the new variable is going to be between zero and one. MinMax scaling can be easily done by calling the MinMax scaler from the scikit-learn package. This transformation does not change the distribution of the feature and due to the decreased standard deviation, the effects of the outliers increase. Therefore, before transformation, it is recommended to handle the outliers. Robust to small standard deviations, When the standard deviation is small the mean-variance scaling is not going to be robust because we're dividing by a very small number.
                 - MaxAbs scaling: Divides all the data in a feature by the maximum absolute value found in that feature. doesn't destroy sparsity because we don’t center the observation through any measurement.
+                - Robust scaling: Subtracts the median of the feature and divides that by the difference between the 75th and 25th quartile. Minimizes impact of large marginal outliers.
+      
 
 
-         - 
+         - For Categorical features:
+           - Ordinal: For ordinal variables like this one, you can use a map function in Pandas to convert the text into numerical values.
+           - Nominal: With one-hot encoding, you convert this one column of Home Types into three columns: A column for House, a column for Apartment, and a column for Condo. Pandas get_dummies function will automatically create the new columns based on one-hot encoding and create the column names for you, with the entry for each category at the end of the variable name.
 
