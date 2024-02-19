@@ -41,7 +41,9 @@ Scaling transformation techniques:
 3. Bayesian search: Makes guesses about best hyperparameter combinations, then uses regressions to refine the combinations.
 
 
-* Amazon SageMaker lets you perform automated hyperparameter tuning. Automatic model tuning can be used with the Amazon SageMaker built-in algorithms, pre-built deep learning frameworks, and bring-your-own-algorithm containers.
+* Amazon SageMaker lets you perform automated hyperparameter tuning. Automatic model tuning can be used with the Amazon SageMaker built-in algorithms, pre-built deep learning frameworks, and bring-your-own-algorithm containers. During hyperparameter tuning, Amazon SageMaker attempts to figure out if your hyperparameters are log-scaled or linear-scaled. Initially, it assumes that hyperparameters are linear-scaled. If they should be log-scaled, it might take some time for Amazon SageMaker to discover that. If you know that a hyperparameter should be log-scaled and can convert it yourself, doing so could improve hyperparameter optimization.
+
+* Running more hyperparameter tuning jobs concurrently gets more work done quickly, but a tuning job improves only through successive rounds of experiments. Typically, running one training job at a time achieves the best results with the least amount of computing time.
 
     
     
