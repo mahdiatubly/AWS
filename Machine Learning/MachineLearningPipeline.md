@@ -45,6 +45,24 @@ Scaling transformation techniques:
 
 * Running more hyperparameter tuning jobs concurrently gets more work done quickly, but a tuning job improves only through successive rounds of experiments. Typically, running one training job at a time achieves the best results with the least amount of computing time.
 
+
+
+## Model Deployment
+
+**To Deploy and host on Amazon SageMaker:** 
+1. Create the model: Use the CreateModel API, Name the model, and tell Amazon SageMaker where it is stored.
+2. Create an HTTPS endpoint configuration: Use the CreateEndpointConfig API. Associate it with one or more created models. Set one or more configurations (production variants) for each model, For each production variant, specify instance type and initial count, and set its initial weight (how much traffic it receives).
+3.  Deploy an HTTPS endpoint based on an endpoint configuration: Use the CreateEndpoint API.
+
+**Deployment Techniques:**
+1. **Blue/green deployment technique:** provides two identical production environments. You can use this technique when you need to deploy a new version of the model to production. This technique requires two identical environments:
+    * A live production environment (blue) that runs version n.
+    * An exact copy of this environment (green) that runs version n+1.
+2. **Canary deployment:** Compare the performance of different versions of the same feature while monitoring a high-level metric.
+
+
+
+
     
     
     
