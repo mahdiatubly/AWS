@@ -16,7 +16,8 @@ processes:
            - Binning is a great strategy that puts continuous data into groups, also called bins. This is one way to convert a continuous variable into a categorical variable. Binning has a smoothing effect on the input data and may also reduce the chances of overfitting in cases with small datasets.
            - Scaling is a technique that is applied to each feature. Scaling is important because a lot, although not all, machine learning algorithms are very sensitive to different ranges of data. Sometimes, a wide range of data will lead to optimization failure. There are exceptions, however. Decision trees in the random forest algorithm, are usually not sensitive to the scale of the variables in the dataset. In general, we're applying a transformation to a particular column, and different columns are scaled independently. We are only using the data in a specific column to do the scaling.
 Scaling transformation techniques:
-                 - 
+                 - Mean-variance standardization: . For one particular feature X, we are going to first find out the mean and standard deviation for that particular feature in the training dataset. What we're going to do is remove the mean and divide by the standard deviation for each observation. After scaling, the new feature is going to have a mean of zero, and a standard deviation of one. To achieve this transformation easily, we can call the scikit-learn StandardScaler function.
+by using the mean-variance standard deviation procedure, we still keep the outliers, but reduce the impact of those outliers dramatically.
 
          - 
 
