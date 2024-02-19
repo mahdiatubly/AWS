@@ -40,6 +40,7 @@ Scaling transformation techniques:
 2. Random search: similar to grid search, but instead of training and scoring on each possible hyperparameter combination, random combinations are selected. You can set the number of search iterations based on time and resource constraints.
 3. Bayesian search: Makes guesses about best hyperparameter combinations, then uses regressions to refine the combinations.
 
+
 * Amazon SageMaker lets you perform automated hyperparameter tuning. Automatic model tuning can be used with the Amazon SageMaker built-in algorithms, pre-built deep learning frameworks, and bring-your-own-algorithm containers.
 
     
