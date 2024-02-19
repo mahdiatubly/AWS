@@ -31,6 +31,6 @@ Scaling transformation techniques:
 ### Model Tuning
 
 **Hyperparameter categories:**
-    1.  model hyperparameters that help define the model itself.
+    1-  model hyperparameters that help define the model itself.
     
 
