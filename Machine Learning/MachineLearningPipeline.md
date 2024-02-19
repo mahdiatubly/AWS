@@ -31,6 +31,11 @@ Scaling transformation techniques:
 ### Model Tuning
 
 **Hyperparameter categories:**
-    1. model hyperparameters that help define the model itself.
+    1. Model Hyperparameters: Help define the model. Such as Filter size, pooling, stride, and padding.
+    2. Optimizer Hyperparameters: How the model learns patterns on data. Such as Gradient descent, and stochastic gradient descent.
+    3. Data Hyperprameters: Define attributes of the data itself. Useful for small/homogenous datasets.
+**Methods for tuning hyperparameters:**
+    
+    
     
 
