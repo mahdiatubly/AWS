@@ -59,6 +59,7 @@ Scaling transformation techniques:
     * A live production environment (blue) that runs version n.
     * An exact copy of this environment (green) that runs version n+1.
 2. **Canary deployment:** Compare the performance of different versions of the same feature while monitoring a high-level metric.
+3. **A/B testing:** is similar to canary testing, but has larger user groups and a longer time scale, typically days or even weeks. 
 
 
 
