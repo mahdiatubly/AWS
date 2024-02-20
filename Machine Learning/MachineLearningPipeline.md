@@ -59,7 +59,14 @@ Scaling transformation techniques:
     * A live production environment (blue) that runs version n.
     * An exact copy of this environment (green) that runs version n+1.
 2. **Canary deployment:** Compare the performance of different versions of the same feature while monitoring a high-level metric.
-3. **A/B testing:** is similar to canary testing, but has larger user groups and a longer time scale, typically days or even weeks. 
+3. **A/B testing:** is similar to canary testing, but has larger user groups and a longer time scale, typically days or even weeks.
+
+* Amazon SageMaker supports four inference option types:
+1. Batch transform: provides offline inference for large datasets. Helpful for preprocessing datasets or gaining inferences from large datasets. It also is useful when running inference if a persistent endpoint is not required, or associating input records with inference to support the interpretation of results.
+2. Real-time inference: is ideal for inference workloads where you have real-time, interactive, low latency requirements. Fully managed and supports autoscaling.
+3. Serverless inference: can be used to serve model inference requests in real time without directly provisioning compute instances or configuring scaling policies.
+4. Asynchronous inference queues incoming requests for asynchronous processing. This option is ideal for requests with large payload sizes (up to 1 GB), long processing times (up to 1 hour), and near-real-time latency requirements.
+
 
 
 
