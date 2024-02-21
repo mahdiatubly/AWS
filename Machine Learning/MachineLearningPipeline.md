@@ -61,11 +61,16 @@ Scaling transformation techniques:
 2. **Canary deployment:** Compare the performance of different versions of the same feature while monitoring a high-level metric.
 3. **A/B testing:** is similar to canary testing, but has larger user groups and a longer time scale, typically days or even weeks.
 
-* Amazon SageMaker supports four inference option types:
+**Amazon SageMaker supports four inference option types:**
 1. Batch transform: provides offline inference for large datasets. Helpful for preprocessing datasets or gaining inferences from large datasets. It also is useful when running inference if a persistent endpoint is not required, or associating input records with inference to support the interpretation of results.
 2. Real-time inference: is ideal for inference workloads where you have real-time, interactive, low latency requirements. Fully managed and supports autoscaling.
 3. Serverless inference: can be used to serve model inference requests in real time without directly provisioning compute instances or configuring scaling policies.
 4. Asynchronous inference queues incoming requests for asynchronous processing. This option is ideal for requests with large payload sizes (up to 1 GB), long processing times (up to 1 hour), and near-real-time latency requirements.
+
+* Amazon Elastic Inference enables you to attach low-cost, GPU-powered acceleration to Amazon EC2 and Amazon SageMaker instances to reduce the cost of running deep learning inferences.
+* AWS IoT Greengrass enables you to perform ML inferencing locally on devices, using models that are created, trained, and optimized in the cloud.
+* The Amazon SageMaker Neo compiler and a runtime help solve the need for optimized models for each hardware. The compiler converts models to an efficient, common format. The runtime is optimized for the underlying hardware and uses specific instruction sets that speed up ML inference.
+
 
 
 
