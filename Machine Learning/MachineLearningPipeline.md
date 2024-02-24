@@ -1,3 +1,9 @@
+## Sagemaker
+A fully managed service used to build, train, and deploy ML models at any scale.
+* Amazon SageMaker Ground Truth provides access to teams of human labelers to label your data, then you can feed that human labeled data back to the service for automatic labeling – where it actually uses ML to learn to label the data in the same way that the humans did.
+
+
+
 ## Feature Engineering and Model Tuning
 **Feature engineering:** is the science (and art) of extracting more information from existing data in order to improve your model’s prediction power and help your model learn faster.
 
