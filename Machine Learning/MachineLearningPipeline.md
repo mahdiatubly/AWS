@@ -14,7 +14,11 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * Scikit-learn For data mining and data analysis with Python Built on NumPy, SciPy, and Matplotilb libraries
 * Matplotlib A visualization library for Python used for two-dimensional plots of NumPy arrays
 * Seaborn is another visualization library for Python. Built on top of Matplotlib and Closely integrated with Pandas DataFrames
-* df.describe() Generates descriptive summaries of your numerical data, such as count, mean, std, min, max
+* df.describe() Generates descriptive summaries of your numerical data, such as count, mean, std, min, max.
+* df.describe(include='all') Generates descriptive summaries of your numerical and categorical data.
+* Transforming the outlier: You could do this by taking the natural log of a value, which in turn would reduce the variation caused by the extreme outlier value and therefore the outlier’s influence on the overall dataset.
+* Many learning algorithms can’t handle missing values.
+* Check how many missing values for each column: df1.isnull().sum() 
 
 
 
