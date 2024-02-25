@@ -18,7 +18,8 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * df.describe(include='all') Generates descriptive summaries of your numerical and categorical data.
 * Transforming the outlier: You could do this by taking the natural log of a value, which in turn would reduce the variation caused by the extreme outlier value and therefore the outlier’s influence on the overall dataset.
 * Many learning algorithms can’t handle missing values.
-* Check how many missing values for each column: df1.isnull().sum() 
+* Check how many missing values for each column: df1.isnull().sum()
+* Default drops the rows with NULL values df1.dropna(). “axis=1” drops the columns with NULL values df1.dropna(axis=1)
 
 
 
