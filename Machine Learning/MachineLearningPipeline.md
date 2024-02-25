@@ -1,6 +1,26 @@
 ## Sagemaker
 A fully managed service used to build, train, and deploy ML models at any scale.
-* Amazon SageMaker Ground Truth provides access to teams of human labelers to label your data, then you can feed that human labeled data back to the service for automatic labeling – where it actually uses ML to learn to label the data in the same way that the humans did.
+* Amazon SageMaker Ground Truth provides access to teams of human labelers to label your data, then you can feed that human-labeled data back to the service for automatic labeling – where it actually uses ML to learn to label the data in the same way that the humans did.
+* Feature is an attribute that can be used to help identify patterns and predict future answers.
+* Label is the answer that you want your model to predict.
+* Model performance metrics typically expressed in terms of accuracy.
+* If your training data is already in the Amazon Elastic File System (Amazon EFS), we recommend using that as your training data source. Amazon EFS has the benefit of directly launching your training jobs from the service without the need for data movement, resulting in faster training start times.
+
+## Data Processing
+* Pandas, an open-source Python library, can be used for this particular data reformatting. Pandas reformat data from various formats like CSV, JSON, Excel, Pickle, and others into a tabular representation, presenting it in rows and columns.
+* A data frame is made up of many series, which are essentially columns capable of holding any data type. The axis labels are referred to as the index.
+* you can call the shape object to see your dataset’s dimensions. Shape returns the number of rows and columns. Columns return the names and types of your columns, and Rows do the same for rows.
+* NumPy For objects with multi-dimensional arrays
+* Scikit-learn For data mining and data analysis with Python Built on NumPy, SciPy, and Matplotilb libraries
+* Matplotlib A visualization library for Python used for two-dimensional plots of NumPy arrays
+* Seaborn is another visualization library for Python. Built on top of Matplotlib and Closely integrated with Pandas DataFrames
+* df.describe() Generates descriptive summaries of your numerical data, such as count, mean, std, min, max
+
+
+
+
+
+
 
 
 
