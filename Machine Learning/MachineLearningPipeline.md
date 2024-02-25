@@ -26,7 +26,12 @@ A fully managed service used to build, train, and deploy ML models at any scale.
         imputer = SimpleImputer(strategy='mean')
         imp = imputer.fit(arr)
         imputer.transform(arr)
-* 
+* A histogram is often a good visualization technique to use in order to see the overall behavior of a particular feature. You can create a histogram by using the Pandas 'hist' function, or Seaborn's 'distplot' function.
+* The density plot plots the distribution of your single feature. The density plot is similar to a histogram but plots a smooth version of the histogram density using a kernel density function.
+*  High correlation between two attributes can sometimes lead to poor model performance.
+* Scatterplot is a really good way to spot any special relationships among variables.
+* Scatterplot matrices help you look at the relationship between multiple different features.
+* Correlation matrices measure the linear dependence between features; they can be visualized with heat maps
 
 
 
