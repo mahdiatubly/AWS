@@ -20,7 +20,13 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * Many learning algorithms can’t handle missing values.
 * Check how many missing values for each column: df1.isnull().sum()
 * Default drops the rows with NULL values df1.dropna(). “axis=1” drops the columns with NULL values df1.dropna(axis=1)
+* Scikit-Learn imputer function is used to impute missing values as follows:
 
+        arr = np.array([[5,3,2,2],[3,None,1,9],[5,2,7,None]])
+        imputer = SimpleImputer(strategy='mean')
+        imp = imputer.fit(arr)
+        imputer.transform(arr)
+* 
 
 
 
