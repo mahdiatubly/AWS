@@ -63,7 +63,9 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * In stochastic gradient descent, or SGD, you update your weights for each record you have in your dataset. For example, if you have 1,000 records or data points in your dataset, SGD will update the parameters 1,000 times. With gradient descent, the parameters would be updated only once—in every epoch. SGD leads to more parameter updates and, therefore, the model will get closer to the minima more quickly and with less overall computational power than gradient descent. One drawback of SGD, however, is that it will oscillate in different directions unlike gradient descent, which will always point towards the minima.
 * Mini-batch gradient descent. This approach uses a smaller dataset or a batch of records (also called batch size) to update your parameters. Mini-batch gradient descent updates more than gradient descent while having less erratic/noisy updates when compared to SGD.
 * Hyperparameters, compared to parameters(weights, bais), are external to a model and can’t be estimated from the data. Hyperparameters are set by humans. Think about hyperparameters as the knobs used to tune the ML algorithm to improve its performance.
-*  Estimator, the high level interface for Amazon SageMaker for model training. Estimators make it easy for you to specify the hardware you want for your training job including the container for your model, the training instance count and type of instance to use.
+*  Estimator, the high-level interface for Amazon SageMaker for model training. Estimators make it easy for you to specify the hardware you want for your training job including the container for your model, the training instance count and type of instance to use.
+*  The fit() API calls the Amazon SageMaker CreateTrainingJob API to start model training. The API uses the configuration you provided to create the estimator and the specified input training data to send the CreatingTrainingJob request to Amazon SageMaker.
+
   
 
 
