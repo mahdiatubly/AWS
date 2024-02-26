@@ -39,6 +39,21 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * For Amazon SageMaker built-in algorithms, the label in your training dataset must be the first column on the left and your features should be to the right. Additionally, SageMaker requires that the CSV file have no header. However, some algorithms may not be able to work with training data in a data frame format.
 * Amazon SageMaker automatically performs some transformations on your data. If you’re using Python, we recommend you use those transformations; if you’re using a different language, we recommend you use protobuf definition file that we provide in the AWS documentation.
 
+**Testing and validation techniques:**
+1. Simple hold-out: when you split your data into multiple sets, usually sets for training data, validation data, and testing data. Training data, which includes both features and labels.
+2. Cross-validation: use cross-validation methods to compare the performance of multiple models. The goal behind cross-validation is to help you choose the model that will eventually perform the best in production:
+   1. K-Fold cross-validation: for a small dataset, randomly partition the data into K different segments. For each segment, we’ll use the rest of the data outside of it for training in order to do a validation on that particular segment.
+   2. Iterated K-Fold validation with shuffling
+   3.  Leave-one-out cross-validation: the K is equal to N. Every time we leave one data point out for testing, we are using the rest in the training data. This is usually used for very small datasets where every data point is very valuable.
+   4.  Stratified K-Fold cross-validation: ensure that for each fold, there are some equal weight proportions of the data for every different fold.
+  
+*  you can use Sklearn to automatically split and shuffle the data at the same time.
+*  The loss function, which is sometimes called the objective function, is the measure of error in your model’s predictions given a set of weights
+*  Simplest loss function: Root mean square error (RMSE): Describes the sample standard deviation of the differences between predicted and observed values.
+
+
+
+
 
 
 
