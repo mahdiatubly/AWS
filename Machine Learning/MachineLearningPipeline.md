@@ -28,10 +28,18 @@ A fully managed service used to build, train, and deploy ML models at any scale.
         imputer.transform(arr)
 * A histogram is often a good visualization technique to use in order to see the overall behavior of a particular feature. You can create a histogram by using the Pandas 'hist' function, or Seaborn's 'distplot' function.
 * The density plot plots the distribution of your single feature. The density plot is similar to a histogram but plots a smooth version of the histogram density using a kernel density function.
-*  High correlation between two attributes can sometimes lead to poor model performance.
+*  A high correlation between two attributes can sometimes lead to poor model performance.
 * Scatterplot is a really good way to spot any special relationships among variables.
 * Scatterplot matrices help you look at the relationship between multiple different features.
-* Correlation matrices measure the linear dependence between features; they can be visualized with heat maps
+* Correlation matrices measure the linear dependence between features; they can be visualized with heat maps. For correlation, it can go as high as one, or as low as minus one. When the correlation is one, this means those two numerical features are perfectly correlated with each other. It's like saying Y is proportional to X. When those two variables’ correlation is minus one, it’s like saying that Y is proportional to minus X. Any linear relationship in between can be quantified by the correlation. So if the correlation is zero, this means there's no linear relationship—but it does not mean that there's no relationship. We can use Seaborn's heat map function to show the correlation matrix.
+* Covariance is a measure of the relationship between two random variables and to what extent, they change together. The Pearson Correlation is just a covariance divided by the standard deviation of X and Y.
+
+## Model Training
+. The two most common formats supported by the Amazon SageMaker built-in algorithms are CSV and recordIO-protobuf.
+
+
+
+
 
 
 
