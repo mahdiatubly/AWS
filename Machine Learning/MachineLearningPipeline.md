@@ -47,9 +47,10 @@ A fully managed service used to build, train, and deploy ML models at any scale.
    3.  Leave-one-out cross-validation: the K is equal to N. Every time we leave one data point out for testing, we are using the rest in the training data. This is usually used for very small datasets where every data point is very valuable.
    4.  Stratified K-Fold cross-validation: ensure that for each fold, there are some equal weight proportions of the data for every different fold.
   
-*  you can use Sklearn to automatically split and shuffle the data at the same time.
-*  The loss function, which is sometimes called the objective function, is the measure of error in your model’s predictions given a set of weights
-*  Simplest loss function: Root mean square error (RMSE): Describes the sample standard deviation of the differences between predicted and observed values.
+* You can use Sklearn to automatically split and shuffle the data at the same time.
+* The loss function, which is sometimes called the objective function, is the measure of error in your model’s predictions given a set of weights
+* Root mean square error (RMSE): Describes the sample standard deviation of the differences between predicted and observed values.
+* Log likelihood loss (cross-entropy loss): 
 
 
 
