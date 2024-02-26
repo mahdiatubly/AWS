@@ -68,16 +68,21 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 
 ## Model Evaluation
 * If your model is overfitting the training data, it makes sense to take actions that reduce model flexibility. To reduce model flexibility, try the following:
-  * Feature selection: consider using fewer feature combinations, decrease n-grams size, and decrease the number of numeric attribute bins.
+  * Feature selection: consider using fewer feature combinations, decreasing n-grams size, and decreasing the number of numeric attribute bins.
   * Increase the amount of regularization used.
 * Variance: How dispersed your predicted values are
 * Bias: The gap between predicted value and actual value
 * Underfitting is where you have low variance and high bias. Overfitting is high variance and low bias.
 * For classification problems, a confusion matrix is often used to classify why and how the model gets something wrong.
-
-
-  
-
+        * Accuracy (score): TP + TN / TP+TN+FP+FN   (less effective when there are a lot of true negative cases in your dataset)
+        * Precision is the proportion of positive predictions that are actually correct. Best when the cost of false positives is high.
+        * Recall (Sensitivity): TP / TP + FN (Best when the cost of false negatives is high)
+        * Specificity: TP / TN + FN
+        * F1 score helps express precision and recall with a single value: (2*precision*Recall)/(Precision+Recall)
+        * AUC - ROC Curve: A performance measurement for a classification problem at various threshold settings. Uses sensitivity (true positive rate) and specificity (false positive rate)
+          * AUC: Area-under-curve (degree or measure of separability).
+          * ROC: Receiver-operator characteristic curve (probability curve)
+* 
 
 
 
