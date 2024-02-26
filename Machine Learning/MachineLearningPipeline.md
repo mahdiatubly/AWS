@@ -50,7 +50,22 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * You can use Sklearn to automatically split and shuffle the data at the same time.
 * The loss function, which is sometimes called the objective function, is the measure of error in your model’s predictions given a set of weights
 * Root mean square error (RMSE): Describes the sample standard deviation of the differences between predicted and observed values.
-* Log likelihood loss (cross-entropy loss): 
+* Log likelihood loss (cross-entropy loss).
+* Often, machine learning models are known to fall into what is called local minima, which prevents the model from improving more and thus preventing them from reaching the global minima.
+* one of the simplest optimization techniques known as gradient descent. In this approach, the loss function is calculated at that step using the complete dataset, and the slope (also known as gradient) of the error curve is calculated using the loss function value at the current point.
+* The step size, also known as “Learning rate” is a hyperparameter to the model. , a small value of gradient indicates the learning rate could be larger, which means we could safely take a larger step down and not go over the minimum. On the other hand, a large value of gradient indicates the slope is steep and, therefore, we must tread carefully and take small steps, so as not to fall off the cliff.
+
+* Drawbacks to gradient descent:
+  * Updates the parameters only after a pass through all the data (an epoch)
+  * Can’t be used when the dataset is too large to fit entirely into memory
+  * Can get stuck at local minima or fail to reach global minima
+
+* In stochastic gradient descent, or SGD, you update your weights for each record you have in your dataset. For example, if you have 1,000 records or data points in your dataset, SGD will update the parameters 1,000 times. With gradient descent, the parameters would be updated only once—in every epoch. SGD leads to more parameter updates and, therefore, the model will get closer to the minima more quickly and with less overall computational power than gradient descent. One drawback of SGD, however, is that it will oscillate in different directions unlike gradient descent, which will always point towards the minima.
+* Mini-batch gradient descent. This approach uses a smaller dataset or a batch of records (also called batch size) to update your parameters. Mini-batch gradient descent updates more than gradient descent while having less erratic/noisy updates when compared to SGD.
+* Hyperparameters, compared to parameters(weights, bais), are external to a model and can’t be estimated from the data. Hyperparameters are set by humans. Think about hyperparameters as the knobs used to tune the ML algorithm to improve its performance.
+*  Estimator, the high level interface for Amazon SageMaker for model training. Estimators make it easy for you to specify the hardware you want for your training job including the container for your model, the training instance count and type of instance to use.
+  
+
 
 
 
