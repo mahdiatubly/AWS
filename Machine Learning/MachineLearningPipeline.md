@@ -35,7 +35,10 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * Covariance is a measure of the relationship between two random variables and to what extent, they change together. The Pearson Correlation is just a covariance divided by the standard deviation of X and Y.
 
 ## Model Training
-. The two most common formats supported by the Amazon SageMaker built-in algorithms are CSV and recordIO-protobuf.
+* The two most common formats supported by the Amazon SageMaker built-in algorithms are CSV and recordIO-protobuf.
+* For Amazon SageMaker built-in algorithms, the label in your training dataset must be the first column on the left and your features should be to the right. Additionally, SageMaker requires that the CSV file have no header. However, some algorithms may not be able to work with training data in a data frame format.
+* Amazon SageMaker automatically performs some transformations on your data. If you’re using Python, we recommend you use those transformations; if you’re using a different language, we recommend you use protobuf definition file that we provide in the AWS documentation.
+
 
 
 
