@@ -66,6 +66,16 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 *  Estimator, the high-level interface for Amazon SageMaker for model training. Estimators make it easy for you to specify the hardware you want for your training job including the container for your model, the training instance count and type of instance to use.
 *  The fit() API calls the Amazon SageMaker CreateTrainingJob API to start model training. The API uses the configuration you provided to create the estimator and the specified input training data to send the CreatingTrainingJob request to Amazon SageMaker.
 
+## Model Evaluation
+* If your model is overfitting the training data, it makes sense to take actions that reduce model flexibility. To reduce model flexibility, try the following:
+  * Feature selection: consider using fewer feature combinations, decrease n-grams size, and decrease the number of numeric attribute bins.
+  * Increase the amount of regularization used.
+* Variance: How dispersed your predicted values are
+* Bias: The gap between predicted value and actual value
+* Underfitting is where you have low variance and high bias. Overfitting is high variance and low bias.
+* For classification problems, a confusion matrix is often used to classify why and how the model gets something wrong.
+
+
   
 
 
