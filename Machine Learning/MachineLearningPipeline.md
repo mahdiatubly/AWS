@@ -74,30 +74,18 @@ A fully managed service used to build, train, and deploy ML models at any scale.
 * Bias: The gap between predicted value and actual value
 * Underfitting is where you have low variance and high bias. Overfitting is high variance and low bias.
 * For classification problems, a confusion matrix is often used to classify why and how the model gets something wrong.
-        * Accuracy (score): TP + TN / TP+TN+FP+FN   (less effective when there are a lot of true negative cases in your dataset)
-        * Precision is the proportion of positive predictions that are actually correct. Best when the cost of false positives is high.
-        * Recall (Sensitivity): TP / TP + FN (Best when the cost of false negatives is high)
-        * Specificity: TP / TN + FN
-        * F1 score helps express precision and recall with a single value: (2*precision*Recall)/(Precision+Recall)
-        * AUC - ROC Curve: A performance measurement for a classification problem at various threshold settings. Uses sensitivity (true positive rate) and specificity (false positive rate)
-          * AUC: Area-under-curve (degree or measure of separability).
-          * ROC: Receiver-operator characteristic curve (probability curve)
-* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   * Accuracy (score): TP + TN / TP+TN+FP+FN   (less effective when there are a lot of true negative cases in your dataset)
+   * Precision is the proportion of positive predictions that are actually correct. Best when the cost of false positives is high.
+   * Recall (Sensitivity): TP / TP + FN (Best when the cost of false negatives is high)
+   * Specificity: TP / TN + FN
+   * F1 score helps express precision and recall with a single value: (2*precision*Recall)/(Precision+Recall)
+   * AUC - ROC Curve: A performance measurement for a classification problem at various threshold settings. Uses sensitivity (true positive rate) and specificity (false positive rate)
+     * AUC: Area-under-curve (degree or measure of separability).
+     * ROC: Receiver-operator characteristic curve (probability curve)
+* For Regression problems:
+  * Mean Squared Error (MSE): take the difference between the prediction and actual value, square that difference, and then sum up all the squared differences for all the observations over N. In scikit-learn, you can use the mean squared error function directly from the metrics library.
+  * R^2 = 1 - (Sum of Suared Error) / var(y) (commonly used metric with linear regression problems reporting a number from 0 to 1. When R squared is close to 1 it usually indicates that a lot of the variabilities in the data can be explained by the model itself. Always increasing when more variables are added to the model, which sometimes leads to overfitting. It isn’t always that the higher the R squared, the better the model. We have to balance the overfitting problem.)
+  * Adjusted-2 is a better metric for multiple variates regression. The Adjusted R squared has already taken care of the added effect for additional variables and it only increases when the added variables have significant effects in the prediction.  R^2 will always increase when more explanatory variables are added to the model; the highest R^2 may not be the best model.
 
 ## Feature Engineering and Model Tuning
 **Feature engineering:** is the science (and art) of extracting more information from existing data in order to improve your model’s prediction power and help your model learn faster.
