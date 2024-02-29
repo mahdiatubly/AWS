@@ -57,6 +57,11 @@
 * SageMaker Projects: Templates you can use for orchestrating ML Ops and continuous integration and delivery (CI/CD) workflows. Orchestration includes managing dependencies, code repositories, build reproducibility, and artifact sharing.
 * Encryption - SageMaker uses an AWS Key Management Service (AWS KMS) key to encrypt your Amazon EFS and Amazon Elastic Block Store (Amazon EBS) file systems by default. You can select a customer-managed key instead.
 * Authentication – Choose between AWS IAM or AWS IAM Identity Center (successor to AWS SSO). Authenticate with AWS IAM to provide access to the Amazon SageMaker console or AWS CLI. You can use AWS IAM Identity Center to centralize identity management and provide a consistent user sign-in experience.
+* Use Amazon SageMaker Role Manager to build and manage persona-based IAM roles for common machine learning needs directly through the Amazon SageMaker console. Amazon SageMaker Role Manager provides three preconfigured role personas with suggested permissions. Permissions are predefined for common ML activities. You can use the activities to create and maintain roles for personas unique to your business needs. These personas include the following:
+  * Data Scientist persona – Use this persona to configure permissions to perform general machine learning development and experimentation in a SageMaker environment.
+  * MLOps persona – Use this persona to configure permissions for operational activities.
+  * SageMaker compute persona – Use this persona to configure permissions to your compute resources, such as the ability to interact with other AWS services.
+
 
 
 
