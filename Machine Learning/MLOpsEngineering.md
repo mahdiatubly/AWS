@@ -44,9 +44,22 @@
 * Spaces: Spaces are used to manage the storage and resource needs of some Amazon SageMaker Studio applications. Each space has a 1:1 relationship with an instance of an application. Spaces can be either private or shared.
   * Private: Private spaces cannot be shared with other users.
   * Shared: Shared spaces are accessible by all users in the domain.
+ 
+* Apps: An app represents an application that supports the reading and execution experience of the user’s notebooks, terminals, and consoles. The type of app can be JupyterServer, KernelGateway, RStudioServerPro, or RSession.
+*  SageMaker has different setup options that are optimized for different organizational needs:
+  * Quick Setup is the fastest option to start using SageMaker Studio as an individual user. It uses AWS Identity and Access Management (IAM) authentication with auto-generated defaults. Quick setup is helpful for single-user domains or first-time users exploring SageMaker. You can update the account configuration later.
+  * Standard Setup requires the most configuration because it has the most options for customization. This option is better for administrators with large user groups. You use this option for VPC configuration, and setting up Single Sign-On or IAM Identity Provider.
+  * Templated SageMaker Domain in AWS Service Catalog is used for centralized management of AWS resources. The data scientists in your organization use the AWS Service Catalog to access the SageMaker Domain directly from a preconfigured environment. This option is useful for organizations that need to comply with strict regulatory guidelines, such as HIPPA or Payment Card Industry (PCI). This option activates automated provisioning of environments that are preconfigured to comply with necessary policies.
+
+* SageMaker JumpStart: Example notebooks and pretrained models that you can use fine-tune for your own data.
+* Notebook sharing: Share a snapshot of your notebook that team members can copy and work on their own version.  To share your latest version, you must create a new snapshot and then share it as a copy.
+*  Shared spaces: A shared space consists of a shared JupyterServer application and a shared directory. Shared spaces facilitate collaboration in real-time. Co-editing is most effective for small groups. 
+* SageMaker Projects: Templates you can use for orchestrating ML Ops and continuous integration and delivery (CI/CD) workflows. Orchestration includes managing dependencies, code repositories, build reproducibility, and artifact sharing.
+* Encryption - SageMaker uses an AWS Key Management Service (AWS KMS) key to encrypt your Amazon EFS and Amazon Elastic Block Store (Amazon EBS) file systems by default. You can select a customer-managed key instead.
+* Authentication – Choose between AWS IAM or AWS IAM Identity Center (successor to AWS SSO). Authenticate with AWS IAM to provide access to the Amazon SageMaker console or AWS CLI. You can use AWS IAM Identity Center to centralize identity management and provide a consistent user sign-in experience.
 
 
-  * 
+
 
 
 
