@@ -46,10 +46,25 @@
   * Shared: Shared spaces are accessible by all users in the domain.
  
 * Apps: An app represents an application that supports the reading and execution experience of the user’s notebooks, terminals, and consoles. The type of app can be JupyterServer, KernelGateway, RStudioServerPro, or RSession.
-*  SageMaker has different setup options that are optimized for different organizational needs:
-  1. Quick Setup is the fastest option to start using SageMaker Studio as an individual user. It uses AWS Identity and Access Management (IAM) authentication with auto-generated defaults. Quick setup is helpful for single-user domains or first-time users exploring SageMaker. You can update the account configuration later.
-  2. Standard Setup requires the most configuration because it has the most options for customization. This option is better for administrators with large user groups. You use this option for VPC configuration, and setting up Single Sign-On or IAM Identity Provider.
-  3. Templated SageMaker Domain in AWS Service Catalog is used for centralized management of AWS resources. The data scientists in your organization use the AWS Service Catalog to access the SageMaker Domain directly from a preconfigured environment. This option is useful for organizations that need to comply with strict regulatory guidelines, such as HIPPA or Payment Card Industry (PCI). This option activates automated provisioning of environments that are preconfigured to comply with necessary policies.
+SageMaker offers various setup options optimized for different organizational needs:
+
+1. **Quick Setup**
+   - The fastest option to start using SageMaker Studio as an individual user.
+   - Utilizes AWS Identity and Access Management (IAM) authentication with auto-generated defaults.
+   - Helpful for single-user domains or first-time users exploring SageMaker.
+   - Account configuration can be updated later.
+
+2. **Standard Setup**
+   - Requires the most configuration and offers the most options for customization.
+   - Suitable for administrators managing large user groups.
+   - Includes VPC configuration and setup for Single Sign-On or IAM Identity Provider.
+
+3. **Templated SageMaker Domain in AWS Service Catalog**
+   - Enables centralized management of AWS resources.
+   - Data scientists can access the SageMaker Domain directly from a preconfigured environment through the AWS Service Catalog.
+   - Ideal for organizations needing to comply with strict regulatory guidelines, such as HIPPA or Payment Card Industry (PCI).
+   - Activates automated provisioning of environments preconfigured to comply with necessary policies.
+
 * SageMaker JumpStart: Example notebooks and pretrained models that you can use fine-tune for your own data.
 * Notebook sharing: Share a snapshot of your notebook that team members can copy and work on their own version.  To share your latest version, you must create a new snapshot and then share it as a copy.
 *  Shared spaces: A shared space consists of a shared JupyterServer application and a shared directory. Shared spaces facilitate collaboration in real-time. Co-editing is most effective for small groups. 
