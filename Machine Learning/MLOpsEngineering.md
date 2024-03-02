@@ -89,6 +89,29 @@ SageMaker offers various setup options optimized for different organizational ne
 * Lifecycle configuration scripts can consist of up to 16384 characters and can run up to 5 minutes. To run a script as an OS process beyond the 5-minute timeframe, you can run the commands using nohup. Lifecycle configuration scripts log information to Amazon CloudWatch Logs under the under the log stream <DomainId>/<UserProfileName>/<AppType>/<AppName>. These logs are helpful for troubleshooting the lifecycle configuration job.
 * Making experimentation environments self-service: AWS Service Catalog enables you to create and manage collections of logical IT products and services configured and parameterized as templates. These IT template products and services encompass various resources, including machine learning experimentation resources such as SageMaker Domains and SageMaker Studio User Profiles. With AWS Service Catalog, you can centrally manage commonly deployed IT services, facilitating consistent governance and compliance adherence. This platform empowers users to swiftly deploy only the approved IT services they require, streamlining operations and enhancing productivity.
 
+## Repeatable MLOps
+* Repository options on AWS:
+  * AWS CodeCommit: A secure, highly scalable, fully managed source control service that hosts private Git repositories
+  * Amazon SageMaker Feature Store: A fully managed, purpose-built repository to store, share, and manage features for machine learning (ML) models
+  * Amazon SageMaker Model Registry: Catalogs and manages model versions
+  * Third-party repository option: For example, GitHub and Bitbucket.
+ 
+*  ML workflow automation on AWS:
+  * SageMaker provides a model-building pipeline through the SageMaker Pipelines SDK. With SageMaker Pipelines, you can create, automate, and manage end-to-end ML workflows at scale.
+  * AWS Step Functions provide a serverless way to orchestrate pipelines, including ML-based ones.
+  * Amazon Managed Workflows for Apache Airflow (MWAA) orchestrates your workflows by using Directed Acyclic Graphs (DAGs) written in Python.
+  * Third-party solutions include MLflow and Kubeflow. MLflow is an open-source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. Kubeflow is a platform for building and deploying portable, scalable ML workflows, based on Docker containers. Kubeflow is the ML toolkit for Kubernetes.
+
+* Amazon S3 provides versioning to protect data assets. When activated, Amazon S3 versioning will retain multiple copies of a data asset. When an asset is updated, prior versions of the asset will be retained and can be retrieved at any time. If an asset is deleted, the last version of it can be retrieved.
+* SageMaker Data Wrangler, a visual data preparation tool. Data Wrangler is integrated into the SageMaker Studio UI. With the SageMaker Data Wrangler data selection tool, you can quickly access and select your tabular and image data from a wide variety of popular sources. For example, you can use Amazon S3, Amazon Athena, Amazon Redshift, AWS Lake Formation, Amazon EMR, Snowflake, and Databricks Delta Lake.
+* Amazon AppFlow is a fully managed integration service. It helps you securely transfer data between software-as-a-service (SaaS) applications and AWS services such as Amazon S3 and Amazon Redshift.
+* AWS Lake Formation data lake offers the features that are required to serve as the unified repository for all of your data securely. With a large number of Data Catalog resources, Lake Formation tag-based access control (LF-TBAC) is the recommended method to use to grant Lake Formation permissions. Principals must access data resources through an integrated service like SageMaker Data Wrangler.
+* Features represent relevant attributes or properties that your model uses for training and to make predictions. 
+
+
+
+
+
 
 
 
