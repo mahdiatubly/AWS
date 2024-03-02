@@ -75,6 +75,20 @@ SageMaker offers various setup options optimized for different organizational ne
   * Data Scientist persona – Use this persona to configure permissions to perform general machine learning development and experimentation in a SageMaker environment.
   * MLOps persona – Use this persona to configure permissions for operational activities.
   * SageMaker compute persona – Use this persona to configure permissions to your compute resources, such as the ability to interact with other AWS services.
+ 
+* If the default environment does not meet your needs, consider using lifecycle configuration scripts. Lifecycle configurations are shell scripts triggered by SageMaker Studio lifecycle events, such as creating a new SageMaker Studio notebook or starting up a SageMaker Studio notebook. You can use these shell scripts to:
+  * Install packages or sample notebooks on your notebook instance
+  * Installing JupyterLab extensions
+  * Preloading datasets
+  * Configure git credentials with AWS Secrets Manager
+  * Setting up source code repositories.
+  * Running other shell scripts
+  * Configure shutdown after idle timeout
+  * To access AWS services from your notebook.
+ 
+* Lifecycle configuration scripts can consist of up to 16384 characters and can run up to 5 minutes. To run a script as an OS process beyond the 5-minute timeframe, you can run the commands using nohup. Lifecycle configuration scripts log information to Amazon CloudWatch Logs under the under the log stream <DomainId>/<UserProfileName>/<AppType>/<AppName>. These logs are helpful for troubleshooting the lifecycle configuration job.
+
+
 
 
 
