@@ -133,6 +133,10 @@ The model registry organizes model package groups, each containing multiple vers
   *  Tests – Consists of multiple subfolders depending on the customer testing methodology. As the minimum set of tests, the following tests are suggested: • An integration test (end-to-end run of the inference including application infrastructure) • A stress test (examine edge cases) • ML tests (such as the distribution of confidence scores or probabilities)
  
 * Amazon SageMaker can connect to AWS CodeCommit, GitHub, GitHub Enterprise, and Bitbucket to pull source code.
+* By integrating AWS CodeCommit with Amazon SageMaker, you can manage your machine learning codebase, track changes, and promote collaboration.
+* If the repository that you are connecting to is private, store the credentials that are used to authenticate to the repository in AWS Secrets Manager.
+* A pull request is the primary way that you and other repository users can review, comment, and merge code changes from one branch to another. CodeCommit is integrated with AWS CloudTrail, a service that provides a record of actions by a user, a role, or an AWS service in CodeCommit. CloudTrail captures all API calls for CodeCommit as events, including calls from the CodeCommit console, your Git client, and code calls to the CodeCommit APIs.
+* 
 
 
 
