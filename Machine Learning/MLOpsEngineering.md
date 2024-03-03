@@ -65,7 +65,7 @@ SageMaker offers various setup options optimized for different organizational ne
    - Ideal for organizations needing to comply with strict regulatory guidelines, such as HIPPA or Payment Card Industry (PCI).
    - Activates automated provisioning of environments preconfigured to comply with necessary policies.
 
-* SageMaker JumpStart: Example notebooks and pretrained models that you can use fine-tune for your own data.
+* SageMaker JumpStart: Example notebooks and pre-trained models that you can use to fine-tune your own data.
 * Notebook sharing: Share a snapshot of your notebook that team members can copy and work on their own version.  To share your latest version, you must create a new snapshot and then share it as a copy.
 *  Shared spaces: A shared space consists of a shared JupyterServer application and a shared directory. Shared spaces facilitate collaboration in real-time. Co-editing is most effective for small groups. 
 * SageMaker Projects: Templates you can use for orchestrating ML Ops and continuous integration and delivery (CI/CD) workflows. Orchestration includes managing dependencies, code repositories, build reproducibility, and artifact sharing.
@@ -106,7 +106,19 @@ SageMaker offers various setup options optimized for different organizational ne
 * SageMaker Data Wrangler, a visual data preparation tool. Data Wrangler is integrated into the SageMaker Studio UI. With the SageMaker Data Wrangler data selection tool, you can quickly access and select your tabular and image data from a wide variety of popular sources. For example, you can use Amazon S3, Amazon Athena, Amazon Redshift, AWS Lake Formation, Amazon EMR, Snowflake, and Databricks Delta Lake.
 * Amazon AppFlow is a fully managed integration service. It helps you securely transfer data between software-as-a-service (SaaS) applications and AWS services such as Amazon S3 and Amazon Redshift.
 * AWS Lake Formation data lake offers the features that are required to serve as the unified repository for all of your data securely. With a large number of Data Catalog resources, Lake Formation tag-based access control (LF-TBAC) is the recommended method to use to grant Lake Formation permissions. Principals must access data resources through an integrated service like SageMaker Data Wrangler.
-* Features represent relevant attributes or properties that your model uses for training and to make predictions. 
+* Features represent relevant attributes or properties that your model uses for training and to make predictions.
+* With a feature store, you generate features by using raw data. Whenever the features are processed, the feature is committed to a central feature store, which serves as the centralized repository. Thus, it helps to eliminate redundancy in feature engineering pipelines and optimizes the ML development cycle. ML developers can easily search the centralized store to discover features to use for training or inference.
+* SageMaker Feature Store organizes features in groups. You can think of a feature group as a data table and a feature as a column in the table. You can use the Amazon SageMaker Feature Store API or Amazon SageMaker Studio to add features to your feature group. When you add a feature to the feature group, you're effectively adding a column to the table. The features that you've added don't have any data. You can think of a record as a row in the data table. You can add new records to the feature group or overwrite them.
+* Amazon SageMaker Feature Store Spark is a Spark connector that connects the Spark library to the Feature Store. Feature Store Spark simplifies data ingestion from Spark DataFrames to feature groups. Feature Store supports batch data ingestion with Spark, using your existing ETL pipeline, on Amazon EMR, GIS, an AWS Glue job, an Amazon SageMaker Processing job, or a SageMaker notebook.
+
+* SageMaker Feature Store offers the following modes for utilizing Feature Store data:
+
+- **Online Mode**: Retrieves the most recent record with low-latency reads, suitable for high-throughput predictions. Requires a feature group stored in an online store.
+
+- **Offline Mode**: Stores all historical records, ideal for training and batch inference with large data streams. Requires a feature group stored in an offline store, utilizing Amazon S3 bucket for storage and supporting data retrieval via Athena queries.
+
+- **Online and Offline Mode**: Integrates both online and offline modes, ensuring synchronization between offline and online datasets to maintain model accuracy. This mode is crucial for preventing discrepancies that could affect model performance.
+
 
 
 
