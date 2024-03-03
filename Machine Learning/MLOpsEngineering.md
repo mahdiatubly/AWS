@@ -112,9 +112,9 @@ SageMaker offers various setup options optimized for different organizational ne
 * Amazon SageMaker Feature Store Spark is a Spark connector that connects the Spark library to the Feature Store. Feature Store Spark simplifies data ingestion from Spark DataFrames to feature groups. Feature Store supports batch data ingestion with Spark, using your existing ETL pipeline, on Amazon EMR, GIS, an AWS Glue job, an Amazon SageMaker Processing job, or a SageMaker notebook.
 
 * SageMaker Feature Store offers the following modes for utilizing Feature Store data:
- - **Online Mode**: Retrieves the most recent record with low-latency reads, suitable for high-throughput predictions. Requires a feature group stored in an online store.
- - **Offline Mode**: Stores all historical records, ideal for training and batch inference with large data streams. Requires a feature group stored in an offline store, utilizing Amazon S3 bucket for storage and supporting data retrieval via Athena queries.
- - **Online and Offline Mode**: Integrates both online and offline modes, ensuring synchronization between offline and online datasets to maintain model accuracy. This mode is crucial for preventing discrepancies that could affect model performance.
+  * **Online Mode**: Retrieves the most recent record with low-latency reads, suitable for high-throughput predictions. Requires a feature group stored in an online store.
+  * **Offline Mode**: Stores all historical records, ideal for training and batch inference with large data streams. Requires a feature group stored in an offline store, utilizing Amazon S3 bucket for storage and supporting data retrieval via Athena queries.
+  * **Online and Offline Mode**: Integrates both online and offline modes, ensuring synchronization between offline and online datasets to maintain model accuracy. This mode is crucial for preventing discrepancies that could affect model performance.
 
 
 
