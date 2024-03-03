@@ -132,7 +132,7 @@ The model registry organizes model package groups, each containing multiple vers
   *  Application infrastructure (app_infra) – Hosts the source code of the infrastructure that is required to run the inference, if necessary. This code might be a triggering mechanism that uses Amazon EventBridge, Amazon API Gateway, AWS Lambda functions, or SageMaker Pipelines.
   *  Tests – Consists of multiple subfolders depending on the customer testing methodology. As the minimum set of tests, the following tests are suggested: • An integration test (end-to-end run of the inference including application infrastructure) • A stress test (examine edge cases) • ML tests (such as the distribution of confidence scores or probabilities)
  
-* 
+* Amazon SageMaker can connect to AWS CodeCommit, GitHub, GitHub Enterprise, and Bitbucket to pull source code.
 
 
 
