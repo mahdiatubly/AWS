@@ -96,7 +96,7 @@ SageMaker offers various setup options optimized for different organizational ne
   * Amazon SageMaker Model Registry: Catalogs and manages model versions
   * Third-party repository option: For example, GitHub and Bitbucket.
  
-*  ML workflow automation on AWS:
+* ML workflow automation on AWS:
   * SageMaker provides a model-building pipeline through the SageMaker Pipelines SDK. With SageMaker Pipelines, you can create, automate, and manage end-to-end ML workflows at scale.
   * AWS Step Functions provide a serverless way to orchestrate pipelines, including ML-based ones.
   * Amazon Managed Workflows for Apache Airflow (MWAA) orchestrates your workflows by using Directed Acyclic Graphs (DAGs) written in Python.+
