@@ -99,7 +99,7 @@ SageMaker offers various setup options optimized for different organizational ne
 *  ML workflow automation on AWS:
   * SageMaker provides a model-building pipeline through the SageMaker Pipelines SDK. With SageMaker Pipelines, you can create, automate, and manage end-to-end ML workflows at scale.
   * AWS Step Functions provide a serverless way to orchestrate pipelines, including ML-based ones.
-  * Amazon Managed Workflows for Apache Airflow (MWAA) orchestrates your workflows by using Directed Acyclic Graphs (DAGs) written in Python.
+  * Amazon Managed Workflows for Apache Airflow (MWAA) orchestrates your workflows by using Directed Acyclic Graphs (DAGs) written in Python.+
   * Third-party solutions include MLflow and Kubeflow. MLflow is an open-source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. Kubeflow is a platform for building and deploying portable, scalable ML workflows, based on Docker containers. Kubeflow is the ML toolkit for Kubernetes.
 
 * Amazon S3 provides versioning to protect data assets. When activated, Amazon S3 versioning will retain multiple copies of a data asset. When an asset is updated, prior versions of the asset will be retained and can be retrieved at any time. If an asset is deleted, the last version of it can be retrieved.
