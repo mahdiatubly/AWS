@@ -147,7 +147,10 @@ The model registry organizes model package groups, each containing multiple vers
 *  Selective execution – Use selective execution to run your selected steps in a pipeline while avoiding the need to rerun the entire pipeline. Selective execution is useful when you must undertake multiple experimentation phases, especially when some steps are time-consuming or costly to run.
 *  Retry policy – Retry policies help you to automatically retry your SageMaker Pipelines steps after an error occurs. Any pipeline step can encounter exceptions, and exceptions happen for various reasons. In some cases, a retry can resolve these issues. With a retry policy for pipeline steps, you can choose whether to retry a particular pipeline step or not.
 *  GPU instances are effective choices for training ML frameworks such as TensorFlow, PyTorch, MXNet, and XGBoost. They are also effective for training Deep Learning models with neural networks. Select from a range of GPU instances that balance performance and cost considerations.
-*  AWS Trainium instances are ptimized for deep learning with large model
+*  AWS Trainium instances are optimized for deep learning with large model
+*  Deployment approval gate – After the package is created and verified, the next step is an approval gate for deployment to the next environment. It is possible to automate this approval, but it is common to have humans in the loop at this point of the lifecycle. Leaders in DevOps, business leaders, or data scientists determine that it is the right time to deploy the package.
+*  If you use SageMaker for real-time inference hosting, you need to create a SageMaker endpoint. The endpoint is the destination end of an API communication channel. Client application APIs send inference requests to this channel, and predictions and other responses are returned from it.
+
 
 
 
