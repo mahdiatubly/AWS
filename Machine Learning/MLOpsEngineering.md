@@ -136,7 +136,14 @@ The model registry organizes model package groups, each containing multiple vers
 * By integrating AWS CodeCommit with Amazon SageMaker, you can manage your machine learning codebase, track changes, and promote collaboration.
 * If the repository that you are connecting to is private, store the credentials that are used to authenticate to the repository in AWS Secrets Manager.
 * A pull request is the primary way that you and other repository users can review, comment, and merge code changes from one branch to another. CodeCommit is integrated with AWS CloudTrail, a service that provides a record of actions by a user, a role, or an AWS service in CodeCommit. CloudTrail captures all API calls for CodeCommit as events, including calls from the CodeCommit console, your Git client, and code calls to the CodeCommit APIs.
-* 
+* Amazon SageMaker Pipelines is a purpose-built fully managed service workflow orchestration solution for ML. With SageMaker Pipelines, you can create, reuse, and share ML workflows at scale. You can create ML workflows by using a Python SDK and visualize them in SageMaker Studio. You can view, track, and run SageMaker Pipelines from the SageMaker Studio interface. With SageMaker Pipelines, you can track the history of your data within each pipeline run.
+* You can introduce variables into your pipeline definition by using parameters. You can use parameters for custom pipeline runs and schedules without having to modify the pipeline definition. You can reference your parameters throughout your pipeline definition. Parameters have a default value, which you can override by specifying parameter values when starting a pipeline execution. All parameters that are used in step definitions must be defined in your pipeline definition.
+* Passing the outputs, or properties, of one step to the next step creates a data dependency. You can also define custom dependencies between steps. SageMaker uses these dependencies to build a Directed Acyclic Graph (DAG).
+*  An Amazon SageMaker Model Building Pipelines instance is composed of a name, parameters, and steps. Pipeline names must be unique within an (account, region) pair.
+*   Step_cond is defined as a conditional check. It calls the code to register the model only if the metrics from the evaluation step meet the defined threshold.
+*   Note that pipeline.upsert(role_arn=role) creates a new pipeline if one doesn't exist, or updates the pipeline definition for an existing pipeline. It also associates an AWS Identity and Access Management (IAM) role. This role should have the right permissions to execute all of the steps that are involved in the pipeline. The role for the SageMaker instance that creates the pipeline must have the iam:PassRole permission for the pipeline execution role in order to pass it. Finally, as soon as the pipeline has been defined, it can be run, or rerun, by calling pipeline.start().
+*   
+
 
 
 
