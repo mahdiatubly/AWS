@@ -150,6 +150,8 @@ The model registry organizes model package groups, each containing multiple vers
 *  AWS Trainium instances are optimized for deep learning with large model
 *  Deployment approval gate – After the package is created and verified, the next step is an approval gate for deployment to the next environment. It is possible to automate this approval, but it is common to have humans in the loop at this point of the lifecycle. Leaders in DevOps, business leaders, or data scientists determine that it is the right time to deploy the package.
 *  If you use SageMaker for real-time inference hosting, you need to create a SageMaker endpoint. The endpoint is the destination end of an API communication channel. Client application APIs send inference requests to this channel, and predictions and other responses are returned from it.
+*  Endpoint: an endpoint could represent a pipeline of logical steps to serve the inference. You can create endpoints manually or by using AWS CloudFormation templates or other automation tools. Even though an IP address is required for client communications, the IP address is not considered part of the endpoint. Instead, it is attached to the endpoint. Also, an endpoint is often defined by a URL that could be mapped through the Domain Name System (DNS) to one or more IP addresses. And the IP address that is assigned to the endpoint could change.
+*  
 
 
 
