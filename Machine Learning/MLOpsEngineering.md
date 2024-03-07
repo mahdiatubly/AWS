@@ -163,7 +163,19 @@ The model registry organizes model package groups, each containing multiple vers
   * Kubernetes Orchestration:
     * With SageMaker Operators for Kubernetes using AWS Controllers for Kubernetes (ACK), Kubernetes users can use the Kubernetes API to provision AWS resources.
     * Users can use Amazon SageMaker Components for Kubeflow Pipelines to build and deploy portable and scalable end-to-end ML workflows. Thus, they take advantage of Amazon SageMaker fully managed services in Kubeflow. Kubeflow is a popular open-source machine learning (ML) toolkit for Kubernetes users who want to build custom ML pipelines.
+------------------------------------------------------------------------------------------------------------------------------
+- Version control – AWS CodeCommit service provides this functionality.
+- CI/CD – AWS CodePipeline and AWS CodeBuild provide the CI/CD functionality.
+- ML model builder – SageMaker training jobs will provide this functionality.
+- ML model deployment – SageMaker model deployment will provide this functionality.
+- Monitoring – SageMaker Model Monitor and SageMaker Clarify will provide this functionality.
+- Workflow security – IAM roles will provide this functionality.
+- Model registry – SageMaker Model Registry will provide this functionality.
+- Training data – Amazon S3 will provide this functionality.
+- Orchestration – AWS Step Functions will provide this functionality.
+- Testing and evaluation – AWS Lambda will provide this functionality.
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 
 
