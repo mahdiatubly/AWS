@@ -156,8 +156,8 @@ The model registry organizes model package groups, each containing multiple vers
 * You can deploy multiple variants of a model to the same SageMaker HTTPS endpoint. This practice is useful for testing variations of a model in production.
 * To modify an endpoint, you provide a new endpoint configuration. SageMaker implements the changes without any downtime.
 * Changing or deleting model artifacts or changing inference code after deploying a model produces unpredictable results. If you need to change or delete model artifacts or change inference code, modify the endpoint by providing a new endpoint configuration. After you provide the new endpoint configuration, you can change or delete the model artifacts that correspond to the old endpoint configuration.
-* practical solutions for production ML workflows:
-  * SageMaker provides a model building pipeline through the SageMaker Pipelines SDK. With SageMaker Pipelines, you can create, automate, and manage end-to-end ML workflows at scale.
+* Practical solutions for production ML workflows:
+  * SageMaker provides a model-building pipeline through the SageMaker Pipelines SDK. With SageMaker Pipelines, you can create, automate, and manage end-to-end ML workflows at scale.
   * AWS Step Functions provides a serverless way to orchestrate pipelines, including ML-based ones.
   * Amazon MWAA orchestrates your workflows by using Directed Acyclic Graphs (DAGs) written in Python. SageMaker APIs are used to export configurations for creating and managing Apache Airflow workflows.
   * Kubernetes Orchestration:
