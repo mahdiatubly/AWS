@@ -151,7 +151,21 @@ The model registry organizes model package groups, each containing multiple vers
 *  Deployment approval gate – After the package is created and verified, the next step is an approval gate for deployment to the next environment. It is possible to automate this approval, but it is common to have humans in the loop at this point of the lifecycle. Leaders in DevOps, business leaders, or data scientists determine that it is the right time to deploy the package.
 *  If you use SageMaker for real-time inference hosting, you need to create a SageMaker endpoint. The endpoint is the destination end of an API communication channel. Client application APIs send inference requests to this channel, and predictions and other responses are returned from it.
 *  Endpoint: an endpoint could represent a pipeline of logical steps to serve the inference. You can create endpoints manually or by using AWS CloudFormation templates or other automation tools. Even though an IP address is required for client communications, the IP address is not considered part of the endpoint. Instead, it is attached to the endpoint. Also, an endpoint is often defined by a URL that could be mapped through the Domain Name System (DNS) to one or more IP addresses. And the IP address that is assigned to the endpoint could change.
-*  
+* SageMaker Inferentia – For inference at scale, you can use an Inf1 instance with a real-time endpoint. SageMaker Inf1 instances deliver up to 30 percent higher throughput and up to 45 percent lower cost per inference than Amazon EC2 G4 instances. Inf1 instances are built to support machine learning inference applications by using the AWS Inferentia chips. You can compile models to run on Inf1 instances by using Amazon SageMaker Neo. High throughput at lower cost than GPUs. Ideal for models that AWS Neuron SDK supports.
+* Tpically, a client application sends requests to the SageMaker HTTPS endpoint to obtain inferences from a deployed model. You can also send requests to this endpoint from your Jupyter notebook during testing.
+* You can deploy multiple variants of a model to the same SageMaker HTTPS endpoint. This practice is useful for testing variations of a model in production.
+* To modify an endpoint, you provide a new endpoint configuration. SageMaker implements the changes without any downtime.
+* Changing or deleting model artifacts or changing inference code after deploying a model produces unpredictable results. If you need to change or delete model artifacts or change inference code, modify the endpoint by providing a new endpoint configuration. After you provide the new endpoint configuration, you can change or delete the model artifacts that correspond to the old endpoint configuration.
+* practical solutions for production ML workflows:
+  * SageMaker provides a model building pipeline through the SageMaker Pipelines SDK. With SageMaker Pipelines, you can create, automate, and manage end-to-end ML workflows at scale.
+  * AWS Step Functions provides a serverless way to orchestrate pipelines, including ML-based ones.
+  * Amazon MWAA orchestrates your workflows by using Directed Acyclic Graphs (DAGs) written in Python. SageMaker APIs are used to export configurations for creating and managing Apache Airflow workflows.
+  * Kubernetes Orchestration:
+    * With SageMaker Operators for Kubernetes using AWS Controllers for Kubernetes (ACK), Kubernetes users can use the Kubernetes API to provision AWS resources.
+    * Users can use Amazon SageMaker Components for Kubeflow Pipelines to build and deploy portable and scalable end-to-end ML workflows. Thus, they take advantage of Amazon SageMaker fully managed services in Kubeflow. Kubeflow is a popular open-source machine learning (ML) toolkit for Kubernetes users who want to build custom ML pipelines.
+
+
+
 
 
 
