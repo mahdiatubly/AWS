@@ -176,6 +176,15 @@ The model registry organizes model package groups, each containing multiple vers
 - Testing and evaluation – AWS Lambda will provide this functionality.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
+*  Step Functions are based on state machines and tasks. A state machine is a workflow. A task is a state in a workflow that represents a single unit of work that another AWS service performs. Each step in a workflow is a state. The AWS Step Functions Data Science SDK provides a Python API that can create and invoke Step Functions workflows. You can manage and execute these workflows directly in Python and in Jupyter notebooks.
+*  Project templates use AWS CloudFormation templates to create the infrastructure resources. These resources are used by SageMaker Pipelines to orchestrate ML workflows from end to end.
+*  The Model Build CodePipeline includes a source stage and a build stage. The source stage gets code from the model build repo in AWS Code Commit. The build stage uses AWS CodeBuild to build and run the Model Build pipeline in SageMaker Pipelines.
+*  Always create roles through SageMaker Studio Settings, rather than creating roles manually. For users who use any role other than the domain's execution role to view and use SageMaker-provided project templates, you must grant Project permissions to the individual user profiles.
+*  If you choose standard setup to set up your SageMaker domain, turn on the following options when you configure SageMaker Studio settings:
+  * Enable Amazon SageMaker project templates and Amazon SageMaker JumpStart for this account.
+  * Enable Amazon SageMaker project templates and Amazon SageMaker JumpStart for Studio users.
+
+* Organizations can use the AWS Service Catalog to create and manage catalogs of IT services that are approved for use on AWS.
 
 
 
