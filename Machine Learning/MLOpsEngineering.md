@@ -226,6 +226,36 @@ In the reliable phase of the MLOps maturity model, the automatic testing methodo
    
   - Resource utilization Monitor the performance of the infrastructure and the cost that is associated with it. Is the hosting infrastructure appropriate for the demand? Are model latency and graphics processing unit (GPU) utilization within acceptable parameters?
   - Traceability and compliance Monitoring provide an audit trail, which is crucial for troubleshooting, improving model performance, and meeting regulatory requirements.
+  - In addition to the previously discussed single model real-time inference hosting option, three other hosting options are available: multiple models, multiple containers, and inference pipeline:
+    - With the multiple models option, you can host multiple models on a shared serving container, which helps to reduce hosting costs.
+    - With the multiple containers option, you can deploy multiple containers to deploy different models and frameworks. By using direct invocation, you can send a request to a specific inference container that is hosted on a multi-container endpoint.
+    - An inference pipeline is an Amazon SageMaker model that consists of a linear sequence of two to fifteen containers. These containers process requests for inferences on data. You use an inference pipeline to define and deploy any combination of pre trained SageMaker built-in algorithms and your own custom algorithms, packaged in Docker containers. You can use an inference pipeline to combine preprocessing, predictions, and postprocessing data science tasks. Inference pipelines are fully managed.
+   
+- Methods for scaling SageMaker resources:
+  - Target tracking: Scale based on a specific Amazon CloudWatch metric (policy) (a predefined metric that is available for use: SageMakerVariantInvocationsPerInstance is the average number of times per minute that each instance for a variant is invoked)
+  - Step: Advanced type of scaling. Define additional policies to dynamically adjust instances based on the size of the alarm breach (policy)( It helps you to configure a more aggressive response when demand reaches a certain level.).
+  - Scheduled: Supports a one-time schedule, a recurring schedule, or cron expressions (policy).
+  - On-demand: Increase or decrease the number of instances manually (manual).
+ 
+- Cooldown refers to the minimum amount of time that must elapse after a scaling event (adding or removing instances) before Auto Scaling initiates another scaling action.
+- Shared services account is used to deploy and operate common services and resources within an enterprise ML platform. Common resources—shared code repositories, library package repositories, automation pipelines, Docker image repositories, service catalog factory, and model repository—can be hosted in the shared services account.
+- Central management: AWS Organizations provides tools to centrally govern and manage your cloud environment. The number and organization of accounts that best meets your needs will depend on your organizational approach and your use case.
+- It is a best practice to run ML workloads with account-level isolation across development, test, and production workloads. AWS accounts serve as the fundamental security boundary in AWS. They serve as a resource container that provides a useful level of isolation. You can use an Amazon EventBridge rule to start AWS CodePipeline in the development account. The pipeline can deploy the hosting infrastructure into a target environment such as staging or production. The job would require cross-account authorization to launch resources in the target account.
+- Operating model is a framework that brings people, processes, and technologies together to help organizations deliver business value in a scalable, consistent, efficient manner. The ML operating model provides a standard product development process for teams across the organization. Three models are available for implementing the operating model:
+  - Centralized data science team operating model, data science activities are centralized within a single team or organization. A shared services account provides tooling that supports MLOps requirements across a data science team. Separate dev, preproduction, and production accounts share the ML workload for all data science teams. Governance policies isolate workloads between data science teams.
+  - Decentralized data science team operating model, each ML team operates independently. Data science activities are distributed as each team provisions, manages, and governs their ML accounts and resources. Centralized observability and data governance accounts support data governance and audit management requirements. Consider resource isolation from one ML team to another. They break out ML workloads by organizational unit access patterns.
+  - Federated operating model, each data science or ML team gets their own set of tooling, development, preproduction, and production accounts. This approach provides physical isolation of ML resources. Each team can scale independently without impacting other teams.
+ 
+- Regardless of the operating model that you choose for your ML solution, AWS has identified best practices for organizing your AWS environment. These best practices augment and support AWS Well-Architected Framework:
+  - Use AWS Control Tower for setup, management, and governance of your accounts. (is a service offered by Amazon Web Services (AWS) that helps organizations set up and govern secure, multi-account AWS environments.)
+  - Use guardrails and service control policies (SCPs) to enforce best practices for each environment type. SCPs essentially set the maximum permissions that can be granted within an account. IAM policies within the account can further restrict permissions, but cannot exceed the limits set by the SCP. Limit infrastructure management access to administrators.
+  - Set up account-level isolation across development, test, and production workloads.
+  - Stream ML workload logs to a log archive account, and then filter and apply log analysis in an observability account.
+  - Run a centralized governance account for provisioning, controlling, and auditing data access.
+ 
+
+
+
 
 
 
