@@ -211,7 +211,8 @@ The model registry organizes model package groups, each containing multiple vers
 
 In the reliable phase of the MLOps maturity model, the automatic testing methodology is introduced, for both the model and invoking infrastructure, in an isolated staging (preproduction) environment that simulates production. After a successful run of the test, the models are deployed to the isolated environment of production. To promote the models among the multiple environments, manual evaluation and approvals are required.
 - Integration testing This testing evaluates the functional requirements of the production model. It verifies that all components of an ML pipeline, such as data preprocessing, model training, and deployment, function together correctly. It is crucial for maintaining pipeline integrity and avoiding issues in production.
-- Stress and load testing Stress testing assesses an ML system's performance under extreme conditions. It helps identify the system's breaking points and ensures reliability during heavy data loads or high prediction request rates.
+- Stress and load testing Stress testing assesses an ML system's performance under extreme conditions. It helps identify the system's breaking points and ensures reliability during heavy data loads or high prediction request rates. Amazon SageMaker Inference Recommender is a capability of Amazon SageMaker. It reduces the time required to get ML models in production by automating load testing and model tuning across SageMaker ML instances.
+
 - Model testing validates the performance and robustness of ML models. It checks metrics like accuracy, fairness, and explainability, which ensures that models are trustworthy, unbiased, and interpretably accurate. This module will focus on various testing methods, such as A/B testing and shadow testing.
 
 - Using multiple accounts for reliable MLOps offers many benefits. At a minimum, you should consider an account for development, staging, production, and other.
@@ -252,6 +253,44 @@ In the reliable phase of the MLOps maturity model, the automatic testing methodo
   - Set up account-level isolation across development, test, and production workloads.
   - Stream ML workload logs to a log archive account, and then filter and apply log analysis in an observability account.
   - Run a centralized governance account for provisioning, controlling, and auditing data access.
+ 
+- Shadow: In this approach, the production model and candidate replacement model are tested with live data side-by-side, but on a dedicated environment for testing. Live production data is feeding these tests, but the responses do not impact the production system. Shadow testing provides production safety because the inference predictions do not impact the production system.
+- SageMaker multi-variant endpoints provide two methods for testing ML models, or you can invoke a specific variant directly for each request:
+  - Specifying traffic distribution – You can distribute endpoint invocation requests across multiple production variants by providing the percentage of traffic distribution for each variant.
+  -  Invoking specific variants – You can test multiple models by invoking specific models for each request. Configure your application to specify a specific TargetVariant parameter when you call InvokeEndpoint during a user session. SageMaker targets the production variant that you specify to process the request. This targeted routing overrides the traffic distribution specified in the endpoint configuration.
+ 
+- Deployment guardrails are a set of model deployment options in Amazon SageMaker Inference to update your machine learning models in production. SageMaker supports two types of deployments to update models in production: blue/green deployments and rolling deployments.
+-  The available traffic shifting modes for blue/green deployments are all at once, canary (Traffic shifts in two steps), and linear (A fixed portion of the traffic shifts in a pre-specified number of equally spaced steps). Amazon CloudWatch alarms are a prerequisite for using baking periods in deployment guardrails. You can only use the auto-rollback functionality in deployment guardrails if you set up CloudWatch alarms that can monitor an endpoint.  If you do not have any CloudWatch alarms set up to monitor your endpoint, then the auto-rollback functionality does not work during your deployment.
+-  The baking period feature helps you to monitor the performance and functionality of your new instances before terminating your old instances. Thus, it ensures that your new fleet is fully operational.
+- The portion of your green fleet that turns on to receive traffic is called the canary, and you can choose the size of this canary. The canary size should be less than or equal to 50 percent of the new fleet's capacity. After the baking period finishes and no pre-specified CloudWatch alarms are activated, the remaining traffic shifts from the old (blue) fleet to the green fleet.
+- Rolling deployments gradually replace the previous deployment of your model version with the new version by updating your endpoint in configurable batch sizes. The traffic shifting behavior of rolling deployments is similar to the linear traffic shifting mode in blue/green deployments. However, rolling deployments provide you with the benefit of reduced capacity requirements when compared to blue/green deployments. With rolling deployments, fewer instances are active at a time. You have more granular control over how many instances you want to update in the new fleet. You should consider using a rolling deployment instead of a blue/green deployment if you have large models or a large endpoint with many instances.
+- You can update the approval status of a model version by using the AWS SDK for Python (Boto3) or by using Amazon SageMaker Studio. You can also update the approval status of a model version as part of a condition step in a SageMaker pipeline.
+
+### Monitoring MLOps
+
+- Endpoint Invocation metrics include:
+  - Invocation4XXErrors and Invocation5XXErrors – The number of InvokeEndpoint requests where the model returned a 4xx HTTP response code or a 5xx HTTP response code.
+  - Invocations – The number of InvokeEndpoint requests sent to a model endpoint.
+  - InvocationsPerInstance – The number of invocations sent to a model, normalized by InstanceCount in each ProductionVariant.
+  - ModelLatency – The interval of time (in microseconds) taken by a model to respond as viewed from SageMaker. This interval includes the local communication times taken to send the request and to fetch the response from the container of a model. It also includes the time taken to complete the inference in the container.
+  - OverheadLatency – The interval of time (in microseconds) added to the time that is taken to respond to a client request by SageMaker overheads. This interval is measured from the time SageMaker receives the request until it returns a response to the client, minus the ModelLatency.
+ 
+- CodeWhisperer: artificial intelligence (AI)-powered code generator for IDEs and code editors.
+- Business goals and KPIs – An important part of planning a ML solution is identifying the success criteria, or key performance indicators (KPIs). You can use these KPIs to understand how well you are meeting your business goals.
+- Hosting infrastructure – Monitor the performance and cost of the hosting infrastructure. Is the hosting infrastructure appropriate for the demand? Are model latency and GPU utilization within acceptable parameters?
+- Model performance – Measure how well your model is generalizing against unseen data as measured by quality metrics such as accuracy, precision, recall, and F1 score.
+- Data Quality: ML models in production need to make predictions on real-life data that is not carefully curated like most training datasets. The statistical nature of the data your model receives in production might drift away from the nature of the baseline data it was trained on. In that case, the model begins to lose accuracy in its predictions.
+- Model quality monitoring jobs compute different metrics depending on the ML problem type, As  mean-squared error (MSE), root-mean-square error (RMSE), mean absolute error (MAE), or r-squared (R2) with regression problems.
+- Data quality drift – Production data distribution differs from data that is used for training.
+- Model quality drift – Predictions that a model makes differ from actual ground truth labels that the model attempts to predict.
+- Feature attribution drift – The contribution of individual features to model predictions differs from the baseline that was established during model training.
+- Bias drift – Bias was introduced because of change in production data distribution or application. (The production dataset differs from the training set)
+- feature attribution reports provide insights into whether a particular model input, or feature, has more influence than expected on overall model behavior. SageMaker Model Monitor integration with SageMaker Clarify provides explainability tools for deployed models hosted in SageMaker. SageMaker Clarify offers a scalable implementation of Shapley Additive xPlanations (SHAP), based on the Shapley value from cooperative game theory. The model explainability monitor assigns each feature an importance value for a particular prediction. It calculates a normalized, global SHAP score for the model which compares feature attribution for live production data with the baseline.
+- Bias differs from variance, which is the level of small fluctuations or noise common in complex data sets. Bias tends to cause model predictions to overgeneralize, and variance tends to cause models to undergeneralize. Increasing variance is one method for reducing the impact of bias. Amazon SageMaker Clarify detects potential bias during data preparation, after model training, and in a deployed model by examining attributes that you specify. SageMaker Clarify bias detection capabilities are integrated into Amazon SageMaker Model Monitor. When SageMaker detects bias beyond a certain threshold, it automatically generates metrics that you can view in Amazon SageMaker Studio and through Amazon CloudWatch metrics and alarms.
+- Amazon SageMaker Model Monitor continuously monitors the quality of Amazon SageMaker machine learning models in production. Model Monitoring provides visibility into data and model quality and can alert you to problems in your application.
+- If you are monitoring a real-time endpoint, you can also visualize metrics in Amazon SageMaker Studio. You can select a specific monitoring job to view details. You can create charts in SageMaker Studio to visualize the baseline and captured values for metrics that are calculated by the monitoring job.
+
+
  
 
 
